@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitcoin Wallet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-[Rubik] h-screen flex flex-col gap-10 items-center justify-center bg-gray-800 text-white">
+  <h1 class="text-3xl absolute top-10 text-center">Welcome to your Bitcoin Wallet</h1>
+  <h3 id="wallet-balance" class="text-5xl lg:text-7xl font-medium">0 SATS</h3>
+  <div class="mt-4 flex gap-4">
+    <button class="text-2xl lg:text-4xl bg-gray-900 rounded-lg flex gap-2 p-4 items-center hover:bg-gray-700 transition duration-200" onclick="showReceiveModal()">Receive</button>
+    <button class="text-2xl lg:text-4xl bg-gray-900 rounded-lg flex gap-2 p-4 items-center hover:bg-gray-700 transition duration-200" onclick="showSendModal()">Send</button>
+  </div>
+  <button class="flex items-center text-gray-400 text-xl gap-2 p-4 w-full justify-center" onclick="showModal('history')">History</button>
+
+  <div id="modal" class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-gray-800 rounded-lg p-6 w-11/12 max-w-md">
+      <span class="text-gray-400 text-lg float-right cursor-pointer hover:text-red-500" onclick="closeModal()">&times;</span>
+      <div id="modal-content" class="mt-4"></div>
+    </div>
+  </div>
+<script src="helpers/api.js"></script>
+</body>
+</html>
